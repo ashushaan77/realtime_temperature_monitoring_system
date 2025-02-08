@@ -23,7 +23,7 @@ const readingSlice = createSlice({
         (reading) => reading.id === action.payload.id
       );
 
-      console.log("payload: ", JSON.stringify(action.payload.id));
+      //console.log("payload: ", JSON.stringify(action.payload.id));
 
       state.currentReading.status =
         state.currentReading.id == action.payload.id
@@ -34,8 +34,8 @@ const readingSlice = createSlice({
           ? action.payload.processedAt
           : null;
 
-          console.log("Index: ", index);
-          console.log("currentReading: ", JSON.stringify(state.currentReading));
+          // console.log("Index: ", index);
+          // console.log("currentReading: ", JSON.stringify(state.currentReading));
 
 
       if (index !== -1) {

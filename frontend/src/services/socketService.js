@@ -12,12 +12,12 @@ const socketService = (dispatch) => {
   socket.on("disconnect", () => dispatch(setConnectionStatus("Disconnected")));
 
   socket.on("temperature_reading", (reading) => {
-    console.log("temperature_reading", reading);
+    // console.log("temperature_reading", reading);
     dispatch(setReading(reading));
   });
 
   socket.on("processed_reading", (reading) => {
-     console.log("processed_reading", JSON.stringify(reading));
+    //  console.log("processed_reading", JSON.stringify(reading));
     dispatch(setUpdateProcessedReading(reading));
   });
 };

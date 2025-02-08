@@ -1,0 +1,62 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "readings/process",
+        "responseMode": "lastNode",
+        "options": {
+          "rawBody": false
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "cdf5291e-ee20-41a2-92cf-b958f4ae705a",
+      "name": "Webhook",
+      "webhookId": "5efc7699-63cc-43db-9d29-ea2a49519c02",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const temperature = items[0].json.body.temperature;\nconst status = temperature > 25 ? 'HIGH' : 'NORMAL';\nconsole.log(\"triggered\")\nreturn {\n    ...items[0].json.body,\n    status: status,\n    processedAt: Date.now(),\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ],
+      "id": "e90f11eb-e202-4af5-81ae-ca5a659eb90b",
+      "name": "Code"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "6655cd7b-7c08-4c9c-8a86-0e0cac4f63a2",
+  "meta": {
+    "instanceId": "184b0e02aa30ac3dc6bb665a001a621aff4a7a5801c924187d6960b2b3aa9d0c"
+  },
+  "id": "0jW2q4dY0xK2QK6c",
+  "tags": []
+}

@@ -22,7 +22,7 @@ const socketService = (io) => {
     // Process the reading
     const processData = await processReadingService(rowReading);
 
-    if (processData.success) {
+    if (processData && processData.success) {
       const processedReading = processData.reading;
 
       // Emit the processed reading to the client

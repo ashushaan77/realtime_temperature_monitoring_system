@@ -16,10 +16,19 @@ docker-compose down -v
 docker-compose up --build
 ```
 
-####  3. Access URLs:
-Frontend: ```http://localhost:3000```
+#### 3. Setup n8n workflow
+      - Go to n8n: ```http://localhost:5678```
+      - Create Account
+      - Select new Workflow
+      - Import from file 
+      - Workflow file available in ```n8n/workflows/process_readings.json```
+      - Activate workflow by toggling to Active mode
 
+####  4. Access URLs:
+n8n: ```http://localhost:5678```
+Frontend: ```http://localhost:3000```
 Backend: ```http://localhost:5000```
+
 
 
 ## API specifications
@@ -77,8 +86,8 @@ Request: {
     _tests_/processing_logic.test.js
 
 
-#### Chosen Approach: Node.js Internal Processing
+#### Chosen Approach: n8n implementation for processing reading with implementing Node.js Internal Processing in case of n8n failure/unavailibity.
  
  ##### Implementation Decisions:
- Processing is handled internally within the backend server. For this simple application, internal handling was suitable. It allows simple & easy implementation, low latency, higher availability & cost efficiency compared to n8n.
+ I have implemented n8n for processing reading as n8n implemenation was getting preferred for this task. I have also implemented NodeJs internal processing for fallback, in case n8n failure/unavailibity.
  

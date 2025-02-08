@@ -15,5 +15,5 @@ const io = new Server(server, {
 socketService(io);
 
 server.listen("5000", () => {
-  console.log("Server started on http://localhost:5001");
+  console.log("Server started on http://localhost:5000");
 });

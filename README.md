@@ -6,7 +6,7 @@ This is a sample app for monitoring temperature from any sensor or API.
 
 #### 1. Clone Repository
 ```
-git clone https://github.com/giwallet/temperature_monitoring_system.git
+git clone https://github.com/ashushaan77/temperature_monitoring_system.git
 cd temperature_monitoring_system
 ```
 #### 2. Build and Start Docker:

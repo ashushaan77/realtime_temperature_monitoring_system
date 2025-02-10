@@ -1,4 +1,4 @@
-# temperature_monitoring_system
+# Realtime Temperature Monitoring System
 This is a sample app for monitoring temperature from any sensor or API.
 
 
@@ -51,7 +51,8 @@ Response: {
 POST /api/readings/process
 Request: {
   id: string,
-  temperature: Number
+  temperature: Number,
+  timestamp: string
 }
  Response: {
     success: boolean,
